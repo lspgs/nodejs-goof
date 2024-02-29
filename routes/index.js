@@ -200,19 +200,6 @@ exports.destroy = function (req, res, next) {
   });
 };
 
-exports.destroy1 = function (req, res, next) {
-  Todo.findById(req.params.id, function (err, todo) {
-
-    try {
-      todo.remove(function (err, todo) {
-        if (err) return next(err);
-        res.redirect('/');
-      });
-    } catch (e) {
-    }
-  });
-};
-
 exports.edit = function (req, res, next) {
   Todo.
     find({}).
